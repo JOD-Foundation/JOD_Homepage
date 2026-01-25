@@ -4,7 +4,33 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>JOD Foundation - Empowering Community</title>
+    <title>JOD Foundation - Empowering Minds, Healing Lives</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="JOD Foundation is a Nigerian non-profit dedicated to empowering communities through education, elderly care, and sustainable development. Join us in making a difference." />
+    <meta name="keywords"
+        content="JOD Foundation, Nigeria, non-profit, charity, education, elderly care, community development, donations, volunteer" />
+    <meta name="author" content="JOD Foundation" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="JOD Foundation - Empowering Minds, Healing Lives" />
+    <meta property="og:description"
+        content="JOD Foundation is a Nigerian non-profit dedicated to empowering communities through education, elderly care, and sustainable development." />
+    <meta property="og:image" content="./assets/logo.png" />
+    <meta property="og:site_name" content="JOD Foundation" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JOD Foundation - Empowering Minds, Healing Lives" />
+    <meta name="twitter:description"
+        content="JOD Foundation is a Nigerian non-profit dedicated to empowering communities through education, elderly care, and sustainable development." />
+    <meta name="twitter:image" content="./assets/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -84,8 +110,8 @@
             class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
             <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
                 <div class="flex items-center gap-4 text-[#121717] dark:text-white">
-                    <div class="size-8 text-primary">
-                        <img src="./assets/logo.png" alt="" srcset="">
+                    <div class="size-14">
+                        <img src="./assets/logo.png" alt="JOD Foundation Logo" class="w-full h-full object-contain">
                     </div>
                     <h2 class="text-xl font-extrabold leading-tight tracking-tight">JOD Foundation</h2>
                 </div>
@@ -116,10 +142,8 @@
             <div
                 class="px-6 lg:px-10 h-20 flex items-center justify-between border-b border-gray-100 dark:border-gray-800 shrink-0">
                 <div class="flex items-center gap-4 text-[#121717] dark:text-white">
-                    <div class="size-8 text-primary">
-                        <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
-                        </svg>
+                    <div class="size-14">
+                        <img src="./assets/logo.png" alt="JOD Foundation Logo" class="w-full h-full object-contain">
                     </div>
                     <h2 class="text-xl font-extrabold leading-tight tracking-tight">JOD Foundation</h2>
                 </div>
@@ -161,14 +185,16 @@
                         class="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-16 flex flex-col items-start justify-end h-full">
                         <h2
                             class="font-display font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-tight max-w-3xl mb-6">
-                            Empowering our community, one hand at a time.
+                            Empowering minds, Healing lives.
                         </h2>
                         <div class="flex flex-wrap gap-4">
-                            <button
-                                class="bg-primary hover:bg-primary-dark text-white text-base font-bold py-3 px-8 rounded-xl transition-all duration-200 shadow-lg hover:shadow-primary/30 flex items-center gap-2">
-                                Learn More
-                                <span class="material-symbols-outlined">arrow_forward</span>
-                            </button>
+                            <a href="./pages/about/index.html">
+                                <button
+                                    class="bg-primary hover:bg-primary-dark text-white text-base font-bold py-3 px-8 rounded-xl transition-all duration-200 shadow-lg hover:shadow-primary/30 flex items-center gap-2">
+                                    Learn More
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -248,14 +274,21 @@
                 </div>
             </section>
             <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div class="flex flex-col md:flex-col md:items-start justify-between mb-8 gap-4">
                     <div>
                         <h2 class="font-display font-bold text-3xl text-text-main dark:text-white mb-2">Our Team
                         </h2>
                         <p class="text-text-muted dark:text-gray-400">Meet the people behind the organization.</p>
                     </div>
-                    <div>
-                        <img />
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                        <div
+                            class="rounded-2xl overflow-hidden shadow-soft hover-lift border border-gray-100 dark:border-gray-700 aspect-[4/3]">
+                            <img src="./assets/team.jpg" alt="Our team in action" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="rounded-2xl overflow-hidden shadow-soft hover-lift border border-gray-100 dark:border-gray-700 aspect-[4/3]">
+                            <img src="./assets/team_2.webp" alt="Our team in action" class="w-full h-full object-cover">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -316,10 +349,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                     <div class="col-span-1 md:col-span-2">
                         <div class="flex items-center gap-3 text-[#121717] dark:text-white mb-6">
-                            <div class="size-6 text-primary">
-                                <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
-                                </svg>
+                            <div class="size-10">
+                                <img src="./assets/logo.png" alt="JOD Foundation Logo"
+                                    class="w-full h-full object-contain">
                             </div>
                             <h3 class="text-lg font-bold">JOD Foundation</h3>
                         </div>
