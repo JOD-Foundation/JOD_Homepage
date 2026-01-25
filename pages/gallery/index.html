@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>JOD Foundation | Impact Gallery</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#134758",
+                        "primary-dark": "#0d3542",
+                        "accent": "#BFA275",
+                        "background-light": "#FAF7F2",
+                        "background-dark": "#121c20",
+                        "text-main": "#262626",
+                        "text-light": "#667d85",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "md": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(19, 71, 88, 0.1)",
+                        "hover": "0 10px 25px -5px rgba(19, 71, 88, 0.15), 0 8px 10px -6px rgba(19, 71, 88, 0.1)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 transition-colors duration-300">
+    <div class="relative flex flex-col min-h-screen w-full overflow-x-hidden">
+        <!-- Navbar -->
+        <header
+            class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
+            <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+                <div class="flex items-center gap-4 text-[#121717] dark:text-white">
+                    <div class="size-8 text-primary">
+                        <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-extrabold leading-tight tracking-tight">JOD Foundation</h2>
+                </div>
+                <div class="hidden lg:flex flex-1 justify-end gap-10 items-center">
+                    <nav class="flex items-center gap-8">
+                        <a class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                            href="../../index.html">Home</a>
+                        <a class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                            href="../about/index.html">About</a>
+                        <a class="text-sm font-semibold text-primary" href="../gallery/index.html">Gallery</a>
+                        <a class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                            href="../contact/index.html">Contact</a>
+                    </nav>
+                    <a href="../../index.html#donate"><button
+                            class="h-10 px-6 bg-primary hover:bg-[#147a7a] text-white text-sm font-bold rounded-lg transition-colors">
+                            Donate
+                        </button></a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-700 dark:text-white">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 z-[60] bg-white dark:bg-background-dark transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col h-screen w-screen overflow-hidden">
+            <div
+                class="px-6 lg:px-10 h-20 flex items-center justify-between border-b border-gray-100 dark:border-gray-800 shrink-0">
+                <div class="flex items-center gap-4 text-[#121717] dark:text-white">
+                    <div class="size-8 text-primary">
+                        <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-extrabold leading-tight tracking-tight">JOD Foundation</h2>
+                </div>
+                <button id="close-menu-btn"
+                    class="text-gray-700 dark:text-white p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="flex-1 flex flex-col p-6 gap-6 overflow-y-auto">
+                <a class="text-lg font-semibold text-gray-900 dark:text-white hover:text-primary transition-colors py-2 border-b border-gray-50 dark:border-gray-800"
+                    href="../../index.html">Home</a>
+                <a class="text-lg font-semibold text-gray-900 dark:text-white hover:text-primary transition-colors py-2 border-b border-gray-50 dark:border-gray-800"
+                    href="../about/index.html">About</a>
+                <a class="text-lg font-semibold text-primary transition-colors py-2 border-b border-gray-50 dark:border-gray-800"
+                    href="../gallery/index.html">Gallery</a>
+                <a class="text-lg font-semibold text-gray-900 dark:text-white hover:text-primary transition-colors py-2 border-b border-gray-50 dark:border-gray-800"
+                    href="../contact/index.html">Contact</a>
+                <div class="pt-4">
+                    <a href="../../index.html#donate" class="w-full">
+                        <button
+                            class="w-full h-12 bg-primary hover:bg-[#147a7a] text-white text-base font-bold rounded-xl transition-colors shadow-lg shadow-primary/20">
+                            Donate
+                        </button>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <main class="flex-grow flex flex-col items-center w-full">
+            <!-- Page Heading -->
+            <div class="w-full max-w-[1200px] px-4 md:px-8 lg:px-12 pt-16 pb-12">
+                <div class="flex flex-col gap-4 max-w-2xl">
+                    <div class="flex items-center gap-2">
+                        <div class="h-px w-8 bg-accent"></div>
+                        <span class="text-accent text-sm font-bold uppercase tracking-widest">Our Impact</span>
+                    </div>
+                    <h1
+                        class="text-primary dark:text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+                        Impact Gallery
+                    </h1>
+                    <p class="text-text-light dark:text-gray-400 text-lg md:text-xl font-normal leading-relaxed">
+                        Visual stories from our recent community outreach programs and initiatives across the globe.
+                        Witness the change we create together.
+                    </p>
+                </div>
+            </div>
+            <!-- Event Section 1: Elderly Care -->
+            <section class="w-full max-w-[1200px] px-4 md:px-8 lg:px-12 mb-20">
+                <div
+                    class="flex flex-col md:flex-row md:items-end justify-between border-b border-gray-200 dark:border-gray-700 pb-4 mb-8 gap-4">
+                    <div>
+                        <h2 class="text-primary dark:text-white text-2xl md:text-3xl font-bold tracking-tight">Community
+                            Outreach</h2>
+                        <div class="flex items-center gap-2 mt-2 text-text-light dark:text-gray-400">
+                            <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            <span class="text-sm font-medium">December, 2025</span>
+                            <span class="mx-1">•</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-grid">
+                    <!-- Image 1 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Smiling elderly woman holding hands with a volunteer"
+                            class="w-full h-auto object-cover"
+                            data-alt="Close up of an elderly woman smiling warmly while holding hands with a young volunteer"
+                            src="../../assets/community_outreach/JOD Foundation-146.jpg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        </div>
+                    </div>
+                    <!-- Image 2 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Group of volunteers organizing food packages" class="w-full h-auto object-cover"
+                            data-alt="Diverse group of volunteers wearing blue shirts packing food boxes"
+                            src="../../assets/community_outreach/JOD Foundation-199.jpg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        </div>
+                    </div>
+                    <!-- Image 3 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Two seniors playing chess in a sunny park" class="w-full h-auto object-cover"
+                            data-alt="Two elderly men focused on a chess game in a park setting"
+                            src="../../assets/community_outreach/JOD Foundation-115.jpg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        </div>
+                    </div>
+                    <!-- Image 4 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Medical checkup for an elderly man" class="w-full h-auto object-cover"
+                            data-alt="Doctor checking blood pressure of a senior citizen"
+                            src="../../assets/community_outreach/JOD Foundation-102.jpg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        </div>
+                    </div>
+                    <!-- Image 5 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Volunteer serving tea to residents" class="w-full h-auto object-cover"
+                            data-alt="Female volunteer pouring tea for seated elderly residents"
+                            src="../../assets/community_outreach/JOD Foundation-105.jpg" />
+                    </div>
+                    <!-- Image 6 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Group photo of all volunteers and seniors" class="w-full h-auto object-cover"
+                            data-alt="Large group photo of smiling seniors and volunteers in a garden"
+                            src="../../assets/community_outreach/JOD Foundation-101.jpg" />
+                    </div>
+                </div>
+            </section>
+            <!-- Event Section 2: Student Scholarship -->
+            <section class="w-full max-w-[1200px] px-4 md:px-8 lg:px-12 mb-20">
+                <div
+                    class="flex flex-col md:flex-row md:items-end justify-between border-b border-gray-200 dark:border-gray-700 pb-4 mb-8 gap-4">
+                    <div>
+                        <h2 class="text-primary dark:text-white text-2xl md:text-3xl font-bold tracking-tight">Efon
+                            Alaye 2025</h2>
+                        <div class="flex items-center gap-2 mt-2 text-text-light dark:text-gray-400">
+                            <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            <span class="text-sm font-medium">September, 2025</span>
+                            <span class="mx-1">•</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry-grid">
+                    <!-- Image 1 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Students sitting in a classroom raising hands" class="w-full h-auto object-cover"
+                            data-alt="Classroom scene with students eagerly raising hands to answer a question"
+                            src="../../assets/efon_alaye/JOD@Efon-51.jpg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        </div>
+                    </div>
+                    <!-- Image 2 Portrait -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Portrait of a young student holding books" class="w-full h-auto object-cover"
+                            data-alt="Close up portrait of a smiling young student clutching textbooks"
+                            src="../../assets/efon_alaye/JOD@Efon-33.jpg" />
+                    </div>
+                    <!-- Image 3 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Award ceremony for scholarship recipients" class="w-full h-auto object-cover"
+                            data-alt="Students standing on stage receiving certificates during a ceremony"
+                            src="../../assets/efon_alaye/JOD@Efon-101.jpg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        </div>
+                    </div>
+                    <!-- Image 4 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Group of students studying outdoors" class="w-full h-auto object-cover"
+                            data-alt="Students sitting on grass studying together with books open"
+                            src="../../assets/efon_alaye/JOD@Efon-41.jpg" />
+                    </div>
+                    <!-- Image 5 -->
+                    <div
+                        class="masonry-item group relative rounded-lg overflow-hidden bg-white dark:bg-gray-800 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1">
+                        <img alt="Teacher helping a student with writing" class="w-full h-auto object-cover"
+                            data-alt="Teacher leaning over a desk to assist a young student with writing"
+                            src="../../assets/efon_alaye/JOD@Efon-52.jpg" />
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800">
+            <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-12 md:py-20">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="flex items-center gap-3 text-[#121717] dark:text-white mb-6">
+                            <div class="size-6 text-primary">
+                                <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold">JOD Foundation</h3>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 max-w-sm mb-6">
+                            Empowering communities through sustainable development. Join us in making a difference
+                            today.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors"
+                                href="mailto:jodfoundations@gmail.com">
+                                <span class="material-symbols-outlined text-sm">mail</span>
+                            </a>
+                            <a class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors"
+                                href="../../index.html">
+                                <span class="material-symbols-outlined text-sm">public</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-6">Quick Links</h4>
+                        <ul class="space-y-4">
+                            <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm font-medium"
+                                    href="../../index.html">Home</a></li>
+                            <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm font-medium"
+                                    href="../about/index.html">About Us</a></li>
+                            <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm font-medium"
+                                    href="../gallery/index.html">Gallery</a></li>
+                            <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm font-medium"
+                                    href="../../index.html#donate">Donate</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-6">Contact</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm">13, Adesegun Okunuga street,<br>
+                                    off freedom way, lekki phase one.</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-sm">email</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm"><a
+                                        href="mailto:jodfoundations@gmail.com">jodfoundations@gmail.com</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-gray-100 dark:border-gray-800 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-sm text-gray-400">© 2026 JOD Foundation. All rights reserved.</p>
+                    <div class="flex gap-6">
+                        <a class="text-sm text-gray-400 hover:text-primary" href="#">Privacy Policy</a>
+                        <a class="text-sm text-gray-400 hover:text-primary" href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            const isClosed = mobileMenu.classList.contains('translate-x-full');
+            if (isClosed) {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>JOD Foundation - About Us</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1b9898",
+                        "background-light": "#f9fafa",
+                        "background-dark": "#17191c",
+                        "card-light": "#ffffff",
+                        "card-dark": "#222529",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#121717] dark:text-[#E3E6E8] flex flex-col min-h-screen">
+    <header
+        class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4 text-[#121717] dark:text-white">
+                <div class="size-8 text-primary">
+                    <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-extrabold leading-tight tracking-tight">JOD Foundation</h2>
+            </div>
+            <div class="hidden lg:flex flex-1 justify-end gap-10 items-center">
+                <nav class="flex items-center gap-8">
+                    <a class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                        href="../../index.html">Home</a>
+                    <a class="text-sm font-semibold text-primary" href="../about/index.html">About</a>
+                    <a class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                        href="../gallery/index.html">Gallery</a>
+                    <a class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                        href="../contact/index.html">Contact</a>
+                </nav>
+                <a href="../../index.html#donate"><button
+                        class="h-10 px-6 bg-primary hover:bg-[#147a7a] text-white text-sm font-bold rounded-lg transition-colors">
+                        Donate
+                    </button>
+                </a>
+            </div>
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-700 dark:text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-white dark:bg-background-dark transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col h-screen w-screen overflow-hidden">
+        <div
+            class="px-6 lg:px-10 h-20 flex items-center justify-between border-b border-gray-100 dark:border-gray-800 shrink-0">
+            <div class="flex items-center gap-4 text-[#121717] dark:text-white">
+                <div class="size-8 text-primary">
+                    <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-extrabold leading-tight tracking-tight">JOD Foundation</h2>
+            </div>
+            <button id="close-menu-btn"
+                class="text-gray-700 dark:text-white p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex-1 flex flex-col p-6 gap-6 overflow-y-auto">
+            <a class="text-lg font-semibold text-gray-900 dark:text-white hover:text-primary transition-colors py-2 border-b border-gray-50 dark:border-gray-800"
+                href="../../index.html">Home</a>
+            <a class="text-lg font-semibold text-primary transition-colors py-2 border-b border-gray-50 dark:border-gray-800"
+                href="../about/index.html">About</a>
+            <a class="text-lg font-semibold text-gray-900 dark:text-white hover:text-primary transition-colors py-2 border-b border-gray-50 dark:border-gray-800"
+                href="../gallery/index.html">Gallery</a>
+            <a class="text-lg font-semibold text-gray-900 dark:text-white hover:text-primary transition-colors py-2 border-b border-gray-50 dark:border-gray-800"
+                href="../contact/index.html">Contact</a>
+            <div class="pt-4">
+                <a href="../../index.html#donate" class="w-full">
+                    <button
+                        class="w-full h-12 bg-primary hover:bg-[#147a7a] text-white text-base font-bold rounded-xl transition-colors shadow-lg shadow-primary/20">
+                        Donate
+                    </button>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <main class="flex-grow flex flex-col items-center w-full">
+        <section class="w-full max-w-[960px] px-6 py-24 md:py-32 flex flex-col items-center text-center">
+            <h1
+                class="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-gray-900 dark:text-white mb-8">
+                About Us
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-medium max-w-3xl leading-relaxed">
+                Restoring hope, dignity, and opportunity to the most vulnerable. We are dedicated to bridging the gap
+                between scarcity and human potential.
+            </p>
+        </section>
+        <section class="w-full max-w-[1100px] px-6 pb-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div
+                class="bg-card-light dark:bg-card-dark p-10 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-6 h-full">
+                <div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+                    <span class="material-symbols-outlined text-3xl">flag</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 dark:text-white">Our Mission</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
+                        To alleviate suffering and empower underserved communities by providing equitable access to
+                        education, healthcare, and essential resources, fostering an environment where every individual
+                        can live with dignity.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="bg-card-light dark:bg-card-dark p-10 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col gap-6 h-full">
+                <div class="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+                    <span class="material-symbols-outlined text-3xl">visibility</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 dark:text-white">Our Vision</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
+                        A world where compassion drives action, and where systemic barriers to education and elderly
+                        care are dismantled, ensuring a future of hope and self-reliance for all.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="w-full bg-primary/5 dark:bg-primary/10 py-24">
+            <div class="max-w-[1100px] mx-auto px-6">
+                <div class="flex flex-col gap-10 items-start">
+                    <div class="w-full">
+                        <h2 class="text-primary text-sm font-bold tracking-wider uppercase mb-3">The Problem</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                            Barriers to education and elderly care are leaving generations behind.
+                        </h3>
+                        <div class="space-y-6 text-gray-700 dark:text-gray-300 text-lg leading-relaxed max-w-4xl">
+                            <p>
+                                In many underserved communities, the cycle of poverty is perpetuated by a lack of access
+                                to quality education. Children and youth are frequently denied the tools they need to
+                                build a better future, trapped by economic hardship and inadequate infrastructure.
+                            </p>
+                            <p>
+                                Simultaneously, the elderly population often faces neglect and isolation. Without
+                                structured support systems, many seniors lack access to basic healthcare, nutrition, and
+                                the social connection vital for a dignified life. These twin challenges—educational
+                                deficits for the young and lack of care for the old—create a gap that threatens the
+                                fabric of our communities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full max-w-[1100px] px-6 py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">Our Story</h2>
+                    <div class="prose prose-lg text-gray-600 dark:text-gray-400">
+                        <p class="mb-4">
+                            The JOD Foundation was founded in <strong>2019</strong>, born from a deep sense of
+                            compassion and an urgent drive for change. It started not as a grand institution, but as a
+                            heartfelt response to the visible suffering in our local communities.
+                        </p>
+                        <p class="mb-4">
+                            Witnessing the struggles of bright children forced out of school and elderly neighbours
+                            languishing without care, our founders realized that waiting for systemic change was not an
+                            option. Immediate, compassionate action was required.
+                        </p>
+                        <p>
+                            What began as a small initiative to support a few families has grown into a structured
+                            organization. Today, our resolve remains as strong as it was in 2019: to be a beacon of hope
+                            and a catalyst for sustainable development in Nigeria.
+                        </p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div
+                        class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-200 dark:bg-gray-800 shadow-xl">
+                        <img alt="Founding team working in a rural village community"
+                            class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                            data-alt="Group of volunteers and community members working together on a project"
+                            src="../../assets/jod.jpg" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full bg-gray-50 dark:bg-[#1C1F23] py-24">
+            <div class="max-w-[1100px] mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-12 items-start">
+                    <div class="flex-1">
+                        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">Who We Serve</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-8 text-lg leading-relaxed">
+                            Our work is deeply rooted in <strong>Nigeria</strong>. We focus our efforts on the most
+                            vulnerable segments of society, ensuring that no one is left behind regardless of age or
+                            status.
+                        </p>
+                        <div class="space-y-6">
+                            <div
+                                class="flex gap-5 p-5 bg-white dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+                                <div
+                                    class="shrink-0 size-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined">child_care</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Children &amp;
+                                        Youth</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                        We provide educational scholarships, school supplies, and mentorship programs to
+                                        unlock the potential of the next generation.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex gap-5 p-5 bg-white dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+                                <div
+                                    class="shrink-0 size-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined">elderly</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">The Elderly</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                        We offer healthcare support, nutritional aid, and social inclusion programs to
+                                        ensure our seniors live with dignity and comfort.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 w-full min-h-[400px]">
+                        <div
+                            class="w-full h-full rounded-2xl bg-gray-200 dark:bg-gray-800 overflow-hidden relative shadow-lg">
+                            <img alt="Map highlighting regions of operation in Nigeria"
+                                class="w-full h-full object-cover opacity-90" data-location="Global Map"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoNyTcwhaeIDsOOx1Uv072xI0TsjG4sY4iQXwEj_GbeymtklJHNdmnh48MqHwGWh8lPCvCGEf8JGCd8BVVSKaZGuKlc11hylQdyDOBhdGkAu3sS1Ogh0VUioMBtQ6oHDFD0dPb1AXdOvaTOdjVjufF5KMm1zPDspQWUakm8n8EknDXi5nYC0jGFry6CSLDLI__3cxSGhSt8DGSp_-WY6ojyIYvge7ZOyLszA7Z6AsifkxeUUgWpwbr9Ti4V-ewXtq6aoGb05Ahj-bS" />
+                            <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+                            <div
+                                class="absolute bottom-8 left-8 right-8 bg-white/95 dark:bg-black/90 backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-xl">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 bg-primary rounded-full flex items-center justify-center text-white shrink-0">
+                                        <span class="material-symbols-outlined">location_on</span>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1">
+                                            Primary Focus</p>
+                                        <p class="text-xl font-bold text-gray-900 dark:text-white">Nigeria</p>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Serving rural and
+                                            peri-urban communities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full bg-white dark:bg-background-dark py-24 border-t border-gray-100 dark:border-gray-800">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">Our Core Values</h2>
+                    <p class="mt-4 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+                        These 8 principles guide our actions, shape our culture, and define how we serve our community.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="p-6 rounded-xl bg-background-light dark:bg-card-dark border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+                        <div
+                            class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary mb-4 shadow-sm">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Compassion</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Acting with deep empathy for the suffering
+                            of others.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-xl bg-background-light dark:bg-card-dark border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+                        <div
+                            class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary mb-4 shadow-sm">
+                            <span class="material-symbols-outlined">accessibility_new</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Dignity</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Respecting the inherent worth of every
+                            individual we serve.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-xl bg-background-light dark:bg-card-dark border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+                        <div
+                            class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary mb-4 shadow-sm">
+                            <span class="material-symbols-outlined">balance</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Equity</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Ensuring fair access to resources and
+                            opportunities for all.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-xl bg-background-light dark:bg-card-dark border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+                        <div
+                            class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary mb-4 shadow-sm">
+                            <span class="material-symbols-outlined">verified</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Integrity</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Upholding honesty, transparency, and ethical
+                            standards.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-xl bg-background-light dark:bg-card-dark border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+                        <div
+                            class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary mb-4 shadow-sm">
+                            <span class="material-symbols-outlined">handshake</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Accountability</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Taking responsibility for our actions and
+                            their impact.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-xl bg-background-light dark:bg-card-dark border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+                        <div
+                            class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary mb-4 shadow-sm">
+                            <span class="material-symbols-outlined">volunteer_activism</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Service</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Dedicated to the well-being of our
+                            communities above self.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-xl bg-background-light dark:bg-card-dark border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+                        <div
+                            class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary mb-4 shadow-sm">
+                            <span class="material-symbols-outlined">groups</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Collaboration</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Building partnerships to achieve greater
+                            collective impact.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-xl bg-background-light dark:bg-card-dark border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+                        <div
+                            class="w-10 h-10 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary mb-4 shadow-sm">
+                            <span class="material-symbols-outlined">lightbulb</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Innovation</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Embracing creative solutions to solve
+                            persistent problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-12 md:py-20">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 text-[#121717] dark:text-white mb-6">
+                        <div class="size-6 text-primary">
+                            <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold">JOD Foundation</h3>
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-400 max-w-sm mb-6">
+                        Empowering communities through sustainable development. Join us in making a difference
+                        today.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors"
+                            href="mailto:jodfoundations@gmail.com">
+                            <span class="material-symbols-outlined text-sm">mail</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors"
+                            href="../../index.html">
+                            <span class="material-symbols-outlined text-sm">public</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm font-medium"
+                                href="../../index.html">Home</a></li>
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm font-medium"
+                                href="../../index.html">About Us</a></li>
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm font-medium"
+                                href="../../pages/gallery/index.html">Gallery</a></li>
+                        <li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm font-medium"
+                                href="../../index.html#donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-6">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span>
+                            <span class="text-gray-500 dark:text-gray-400 text-sm">13, Adesegun Okunuga street,<br>
+                                off freedom way, lekki phase one.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-sm">email</span>
+                            <span class="text-gray-500 dark:text-gray-400 text-sm"><a
+                                    href="mailto:jodfoundations@gmail.com">jodfoundations@gmail.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-100 dark:border-gray-800 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-400">© 2026 JOD Foundation. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a class="text-sm text-gray-400 hover:text-primary" href="#">Privacy Policy</a>
+                    <a class="text-sm text-gray-400 hover:text-primary" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            const isClosed = mobileMenu.classList.contains('translate-x-full');
+            if (isClosed) {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+        }
+    </script>
+</body>
+
+</html>
